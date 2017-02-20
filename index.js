@@ -73,13 +73,19 @@ class NavigationBar extends Component {
     }
 
     const colorStyle = data.tintColor ? { color: data.tintColor, } : null;
+    const style = data.style ? data.style : styles.navBarTitleText;
 
     return (
       <View style={styles.navBarTitleContainer}>
-        <Text
-          style={[styles.navBarTitleText, colorStyle, ]}>
-          {data.title}
-        </Text>
+        <View>
+          <Text
+            style={[style, colorStyle ]}
+            allowFontScaling={false}
+            numberOfLines={1}
+          >
+            {data.title}
+          </Text>
+        </View>
       </View>
     );
   }
